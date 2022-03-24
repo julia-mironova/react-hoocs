@@ -1,22 +1,18 @@
 import "./App.css";
-import React, { useState, useCallback } from "react";
-import ItemsList from "./itemsList";
-import Main from "./main";
-import Alert from "./alert";
-
-export const AlertContex = React.createContext();
+import React, { useState } from "react";
 
 function App() {
-	const [alert, setAlert] = useState(false);
+	const [name, setName] = useState("");
 
-	const toggleAlert = () => setAlert((prev) => !prev);
+	const changehandler = (e) => {
+		setName(e.target.value);
+	};
 	return (
-		<AlertContex.Provider value={alert}>
-			<div className={"container pt-3"}>
-				<Alert />
-				<Main toggle={toggleAlert} />
-			</div>
-		</AlertContex.Provider>
+		<div className={"container pt-3"}>
+			<input type="text" value={name} onChange={changehandler} />
+
+			<h1>{name}</h1>
+		</div>
 	);
 }
 

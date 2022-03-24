@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { AlertContex } from "./App";
+import { AlertContex } from "./alertLikeAng";
 
 export default function Alert() {
 	const alert = useContext(AlertContex);
